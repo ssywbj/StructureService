@@ -21,4 +21,13 @@
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletRegister</servlet-name>
+        <servlet-class>com.suheng.structure.login.ServletRegister</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRegister</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
 </web-app>

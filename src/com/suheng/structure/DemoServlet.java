@@ -40,7 +40,7 @@ public class DemoServlet extends HttpServlet {
 
         System.out.println("ip: " + NetworkUtil.getHostIp());
 
-        response.setContentType("text/html");//设置响应内容类型
+        response.setContentType("text/html;charset=UTF-8");//设置响应内容类型
         PrintWriter out = response.getWriter(); //输出文本到访问端
         out.write("<h3> " + msg + " </h3>");
         out.flush();
