@@ -12,6 +12,8 @@ import java.io.PrintWriter;
 public class ServletLogin extends HttpServlet {
     private static final String JSON = "{" + "\"code\":0" + ",\"msg\":ok" + ",data:{"
             + "\"member_id\":17" + ",\"age\":18" + ",\"email_address\":\"韦Wbj@qq.com\"" + "}" + "}";
+    private static final String JSON_ERROR = "{" + "\"code\":-1" + ",\"msg\":用户名或密码不正确" + ",data:{"
+            + "\"last_time\":12420249000" + ",\"error_count\":23" + ",\"error_suggestion\":\"请找回用户名或密码\"" + "}" + "}";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +36,11 @@ public class ServletLogin extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         //System.out.println("json: " + JSON);
-        out.write(JSON);
+        if ("满意".equals(userName)) {
+            out.write(JSON_ERROR);
+        } else {
+            out.write(JSON);
+        }
         out.flush();
         out.close();
     }
